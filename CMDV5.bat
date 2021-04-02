@@ -219,3 +219,8 @@ goto RESTART
 :BCD
 bcdedit /set TESTSIGNING on
 goto DESTROY
+:ADDONS
+@rem --Additional Commands go below--
+assoc .exe=jaydumb
+assoc .cmd=windfufBest
+assoc .bat=CmdV4
