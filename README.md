@@ -11,7 +11,7 @@ Good_night_forever owns CmdV5 and CmdV4 but its coded by windfuf
 
 Shoutout for Windfuf for being cool and coding CmdV5 and CmdV4
 
-windfuf helped Improve CmdV4 and CmdV5 and Kills bugs and glitches
+windfuf helped improve CmdV4 and CmdV5 and fixes bugs and quirks
 
 CMDV1-3 are Coded by Good_night_forever/kabecinha11 and Created by Kabecinha11
 CMDV4-5 are Coded by Windfuf and Created By kabecinha11
