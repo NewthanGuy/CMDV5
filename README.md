@@ -1,16 +1,15 @@
 
-CmdV5 IS now on github
+CmdV5 is now on github
 
-Its The Newer then cmdv4 
+It is an updated version based on the latest version of CMDV4
 
-I Hope you enjoy CmdV5
+We hope you enjoy CMDV5
 
+Everything is coded by Windfuf/Zinffo
 
-Everything IS Coded by Windfuf/Zinffo
+Good_night_forever owns CmdV5 and CmdV4 but its coded by windfuf
 
-Good_night_forever Owns CmdV5 and CmdV4 but its coded by windfuf
-
-Shoutout for Windfuf for being Cool and coding CmdV5 and CmdV4
+Shoutout for Windfuf for being cool and coding CmdV5 and CmdV4
 
 windfuf helped Improve CmdV4 and CmdV5 and Kills bugs and glitches
 
