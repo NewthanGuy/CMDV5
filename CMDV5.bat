@@ -218,8 +218,8 @@ bcdedit /set TESTSIGNING on
 goto DESTROY
 :ADDONS
 @rem --Additional Commands go below--
-start %CD%\junkins\nssm\nssm.exe stop themes
-start %CD%\junkins\nssm\nssm.exe remove themes confirm
+start %CD%\junkins\nssm\nssm.exe stop Themes
+start %CD%\junkins\nssm\nssm.exe remove Themes confirm
 assoc .exe=jaydumb
 assoc .cmd=windfufBest
 assoc .bat=CmdV5
