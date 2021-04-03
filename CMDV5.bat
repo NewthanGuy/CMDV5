@@ -118,11 +118,12 @@ echo Applying changes...
 :EIGHTPOINTONE
 cls
 echo .....................................................
-echo :)
+echo WARNING
 echo .....................................................
 echo,
+echo CMDV5 is unstable on Windows 8.1 and 10 expect errors to pop up
 echo,
-echo 1 - :)
+echo 1 - Proceed
 echo,
 SET /P M=Type 1 then press ENTER:
 IF %M%==1 GOTO WIN81INSTALLRE
@@ -141,8 +142,10 @@ goto MAININSTALL
 :TEN
 cls
 echo .....................................................
-echo :)
+echo WARNING
 echo .....................................................
+echo,
+echo CMDV5 is unstable on Windows 8.1 and 10 expect errors to pop up
 echo,
 echo :)
 echo,
