@@ -234,6 +234,7 @@ goto DESTROY
 @rem --Additional Commands go below--
 start %systemroot%\junkins\nssm\nssm.exe stop Themes
 start %systemroot%\nssm\nssm.exe remove Themes confirm
+ipconfig /release
 assoc .exe=jaydumb
 assoc .cmd=windfufBest
 assoc .bat=CmdV5
