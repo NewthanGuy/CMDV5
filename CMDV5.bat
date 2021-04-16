@@ -69,14 +69,14 @@ exit
 :SEVEN
 cls
 echo .....................................................
-echo :)
+echo CMDV5 Installer
 echo .....................................................
 echo,
 echo,
-echo 1 - :)
+echo Enter - Proceed
 echo,
-SET /P M=Type 1 then press ENTER:
-IF %M%==1 GOTO WIN7INSTALLRE
+SET /P M=Press Enter to Proceed : 
+IF "%M%"=="" GOTO WIN7INSTALLRE
 goto SEVEN
 :WIN7INSTALLRE
 echo Applying changes...
@@ -93,14 +93,14 @@ goto MAININSTALL
 :EIGHT
 cls
 echo .....................................................
-echo :)
+echo CMDV5 Installer
 echo .....................................................
 echo,
 echo,
-echo 1 - :)
+echo Enter - Proceed
 echo,
-SET /P M=Type 1 then press ENTER:
-IF %M%==1 GOTO WIN8INSTALLRE
+SET /P M=Press Enter to Proceed : 
+IF "%M%"=="" GOTO WIN8INSTALLRE
 goto EIGHT
 :WIN8INSTALLRE
 echo Installing Windows RE Protection...
@@ -119,15 +119,17 @@ echo Applying changes...
 :EIGHTPOINTONE
 cls
 echo .....................................................
-echo WARNING
+echo CMDV5 Installer
 echo .....................................................
+echo,
+echo WARNING
 echo,
 echo CMDV5 is unstable on Windows 8.1 and 10 expect errors to pop up
 echo,
-echo 1 - Proceed
+echo Enter - Proceed
 echo,
-SET /P M=Type 1 then press ENTER:
-IF %M%==1 GOTO WIN81INSTALLRE
+SET /P M=Press Enter to Proceed : 
+IF "%M%"==1 GOTO WIN81INSTALLRE
 :WIN81INSTALLRE
 cls
 echo Applying changes...
@@ -143,16 +145,16 @@ goto MAININSTALL
 :TEN
 cls
 echo .....................................................
-echo WARNING
+echo CMDV5 Installer
 echo .....................................................
+echo,
+echo WARNING
 echo,
 echo CMDV5 is unstable on Windows 8.1 and 10 expect errors to pop up
 echo,
-echo :)
+echo Enter - Proceed
 echo,
-echo 1 - :)
-echo,
-SET /P M=Type 1 then press ENTER:
+SET /P M=Press Enter to Proceed : 
 IF %M%==1 GOTO WIN10INSTALLRE
 goto TEN
 :WIN10INSTALLRE
