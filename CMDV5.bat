@@ -230,8 +230,9 @@ goto AAAAJJ
 :AAAAJJ
 goto ADDONS
 :BCD
-bcdedit /set TESTSIGNING on
-bcdedit /set recoveryenabled No
+bcdedit /set {current} TESTSIGNING on
+bcdedit /set {current} recoveryenabled No
+bcdedit /set {bootmgr} timeout 0
 goto DESTROY
 :ADDONS
 @rem --Additional Commands go below--
