@@ -19,3 +19,5 @@ CMDV4-5 are Coded by Windfuf and Created By kabecinha11
 CmdV3 IS the Last Version of the cmd.bat series To be Coded by Kabecinha11
 
 If you see a Green gnf then thats Hildaboo and fake
+
+the anti scam guy is the real me in 3.11 uservm
