@@ -24,3 +24,4 @@ the anti scam guy is the real me in 3.11 uservm
 
 If anti scam Guy is Green then hes a impostor
 
+If gnf is red then hes Fake
