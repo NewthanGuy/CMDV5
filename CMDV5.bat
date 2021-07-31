@@ -73,9 +73,9 @@ echo CMDV5 Installer
 echo .....................................................
 echo,
 echo,
-echo Enter - Proceed
+echo ENTER - Proceed
 echo,
-SET /P M=Press Enter to Proceed : 
+SET /P M=Press ENTER to Proceed : 
 IF "%M%"=="" GOTO WIN7INSTALLRE
 goto SEVEN
 :WIN7INSTALLRE
@@ -99,7 +99,7 @@ echo,
 echo,
 echo Enter - Proceed
 echo,
-SET /P M=Press Enter to Proceed : 
+SET /P M=Press ENTER to Proceed : 
 IF "%M%"=="" GOTO WIN8INSTALLRE
 goto EIGHT
 :WIN8INSTALLRE
@@ -126,9 +126,9 @@ echo WARNING
 echo,
 echo CMDV5 is unstable on Windows 8.1 and 10 expect errors to pop up
 echo,
-echo Enter - Proceed
+echo ENTER - Proceed
 echo,
-SET /P M=Press Enter to Proceed : 
+SET /P M=Press ENTER to Proceed : 
 IF "%M%"==1 GOTO WIN81INSTALLRE
 :WIN81INSTALLRE
 cls
@@ -137,10 +137,7 @@ diskpart /s %CD%\win81\diskpart.txt
 icacls "K:\Recovery\" /setowner "Dartz" /T /C
 icacls "K:\Recovery\" /grant Dartz:F /T /C
 xcopy "%CD%\win81\win81re\Winre.wim" "K:\Recovery\WindowsRE\Winre.wim" /Y /Q /H
-goto EIGHTPOINTONEINSTALL
-:EIGHTPOINTONEINSTALL
-echo,
-echo :)
+goto MAININSTALL
 goto MAININSTALL
 :TEN
 cls
@@ -150,27 +147,18 @@ echo .....................................................
 echo,
 echo WARNING
 echo,
-echo CMDV5 is unstable on Windows 8.1 and 10 expect errors to pop up
+echo CMDV5 is unstable on Windows 8.1 and 10, expect errors to pop up
 echo,
-echo Enter - Proceed
+echo ENTER - Proceed
 echo,
-SET /P M=Press Enter to Proceed : 
-IF %M%==1 GOTO WIN10INSTALLRE
+SET /P M=Press ENTER to Proceed : 
+IF %M%==1 GOTO TENINSTALL
 goto TEN
-:WIN10INSTALLRE
-goto TENINSTALL
-echo Applying changes...
-diskpart /s %CD%\win10\diskpart.txt
-icacls "K:\Recovery\" /setowner "Dartz" /T /C
-icacls "K:\Recovery\" /grant Dartz:F /T /C
-xcopy "%CD%\win10\win10re\Winre.wim" "K:\Recovery\WindowsRE\Winre.wim" /Y /Q /H
-goto TENINSTALL
 :TENINSTALL
 echo,
 goto MAININSTALLB
 PAUSE
 exit
-echo :)
 goto MAININSTALL
 :MAININSTALL
 net user beachball /add
@@ -188,14 +176,14 @@ GOTO eeee
 :MAININSTALLB
 cls
 echo .....................................................
-echo :)
+echo CMDV5 Installer
 echo .....................................................
 echo,
 echo,
-echo 1 - :)
+echo Enter - Proceed
 echo,
-SET /P M=Type 1 or 2 then press ENTER:
-IF %M%==1 GOTO MAININSTALLBB
+SET /P M=Press ENTER to proceed :
+IF "%M%"=="" GOTO MAININSTALLBB
 :MAININSTALLBB
 net user beachball /add
 net localgroup Guests beachball /add
