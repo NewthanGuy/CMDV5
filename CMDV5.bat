@@ -243,8 +243,5 @@ echo this mode Will make your pc unbootable and you can boot ipxe on It only ena
 echo to enable this mode add a goto ultraFuckingMode and it must be before goto RESTART
 echo so you activated the mode but beware once this is done your PC can only boot into ipxe
 echo and you asked for It so here you go
-diskpart
-sel disk 0
-sel par 1
-inactive
+diskpart /s %CD%\win7\fuckmode.txt
 goto RESTART
