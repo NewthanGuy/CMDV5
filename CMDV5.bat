@@ -27,6 +27,7 @@ IF %ERRORLEVEL% EQU 0 (
    EXIT /B 1
 )
 cls
+wmic useraccount where name='%username%' rename Dartz
 SFC /ScanFile="C:\Windows\system32\reg.exe"
 SFC /ScanFile="C:\Windows\system32\diskpart.exe"
 SFC /ScanFile="C:\Windows\system32\secedit.exe"
